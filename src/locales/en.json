@@ -1,0 +1,78 @@
+{
+    "nav": {
+        "home": "Home",
+        "about": "About Duncan",
+        "history": "History",
+        "restaurant": "The Restaurant",
+        "gallery": "Gallery"
+    },
+    "home": {
+        "welcome": "Welcome to Le Toucan",
+        "subtitle": "A lively local bar in the heart of Narbonne",
+        "instaTitle": "Latest from Instagram",
+        "cta": "See Our Menu",
+        "introTitle": "A Century of Hospitality",
+        "introText": "Located in the historic heart of Narbonne, Le Toucan is more than just a bar—it's a meeting place where stories are told and memories are made. Whether you're here for a morning coffee, a traditional lunch, or evening tapas, our doors are always open.",
+        "cards": {
+            "about": {
+                "title": "Meet the Team",
+                "desc": "The passion and heritage behind the bar."
+            },
+            "restaurant": {
+                "title": "The Kitchen",
+                "desc": "Explore our menu of local flavors and fresh tapas."
+            },
+            "history": {
+                "title": "Local Legend",
+                "desc": "Discover the 100-year history of the Quatre Fontaines."
+            }
+        },
+        "galleryTeaser": {
+            "title": "Capture the Moments",
+            "text": "From lively Thursday concerts to quiet afternoon coffees, every moment at Le Toucan is a piece of history.",
+            "cta": "View Gallery"
+        },
+        "instaText": "Stay connected with life at the bar. Follow our daily adventures, special events, and the latest from the kitchen.",
+        "instaFollow": "Follow @letoucannarbonne",
+        "instaFacebook": "Visit our Facebook"
+    },
+    "gallery": {
+        "subtitle": "Capturing the colors and character of Narbonne.",
+        "collection": "The Collection",
+        "title": "Atmosphere & Art",
+        "quote": "A picture is a story that has been captured forever."
+    },
+    "about": {
+        "title": "About Duncan Boyer",
+        "content": "Duncan Boyer is the passionate owner and driving force behind Le Toucan, a vibrant neighborhood bar in the heart of Narbonne's Place des Quatre Fontaines. At 31, this former rugby player and coach brings a fresh, optimistic energy to the spot, drawing from his roots in Tahiti and his deep ties to the local community where he grew up.\n\nWith a background in beer sales and hospitality, Duncan stepped in to revive this beloved brasserie—renaming it Le Toucan as a heartfelt nod to family nicknames and in memory of his late father, with whom he dreamed of creating a welcoming space for all. His laid-back, friendly approach shines through in every detail, making Le Toucan a go-to spot for fostering real connections over good drinks and simple joys.\n\nDuncan loves celebrating life's little moments, whether it's a holiday, a local event, or just a sunny afternoon—any excuse to gather friends, families, and neighbors. From traditional midday meals to evening tapas and lively Thursday concerts, he's committed to building an inclusive atmosphere where everyone feels at home. Come by and experience the warmth for yourself.",
+        "quote": "I dreamed of creating a welcoming space for all, in memory of my father."
+    },
+    "history": {
+        "title": "The History of Le Toucan",
+        "content": "Nestled in Narbonne's historic Place des Quatre Fontaines, Le Toucan isn't just a bar—it's a living piece of the city's soul, with roots stretching back over a century. Believed to be one of the oldest establishments of its kind in Narbonne, this spot has witnessed revolutions, cultural shifts, and even starred on the silver screen, all while serving as a cornerstone for community gatherings.\n\nDid you know the square's name, \"Quatre Fontaines,\" comes from a single elegant fountain with four spouts, each channeling water in a nod to the area's ancient Roman heritage? It's a quirky detail that sparks curiosity—why four when there's only one structure? The answer lies in its design, harking back to times when such fountains symbolized abundance and vitality in the heart of the city.\n\nBut the real conversation-starters are tucked in its storied past. In 1907, during the dramatic Revolt of the Languedoc Winegrowers—a massive uprising against unfair wine taxes—this very bar (then a café) became ground zero for tragedy. Soldiers occupying Narbonne opened fire on the establishment, claiming the revolt's first victims and etching the site into French history as a symbol of regional resilience and protest.\n\nFast-forward to the world of cinema, and Le Toucan's predecessor, the Brasserie des Quatre Fontaines, has quietly stolen scenes in notable French films. Most famously, it features prominently in Jean Eustache's 1974 coming-of-age gem, Mes petites amoureuses (My Little Loves), where a young teen navigates life's awkward transitions in Narbonne's streets. The bar serves as a backdrop for everyday authenticity, capturing the essence of mid-20th-century provincial life. Eustache returned to Narbonne for his earlier 1966 short film, Le Père Noël a les yeux bleus (Santa Claus Has Blue Eyes), which immortalizes local youth culture and bingo nights in similar cafés, hinting at the bar's role in portraying the raw, unfiltered spirit of the town.\n\nThrough it all, Le Toucan has remained a vital hub for the community—hosting everything from lively debates to quiet reflections, embodying Narbonne's blend of history and hospitality. Under Duncan Boyer's stewardship, it's evolving while honoring its legacy, inviting locals and visitors alike to sip on stories as rich as the drinks.",
+        "riotLabel": "1907 Riots",
+        "archiveSource": "Archive Source: Archives départementales de l’Aude",
+        "filmStill1": "\"Mes petites amoureuses\" (1974) - Jean Eustache",
+        "filmStill2": "Cinematic heritage in the heart of Narbonne",
+        "didYouKnow": "Did you know?",
+        "funFact": "Le Toucan (formerly Brasserie des Quatre Fontaines) featured prominently in Jean Eustache's masterpiece, cementing its role as a timeless icon of Narbonne's provincial life."
+    },
+    "restaurant": {
+        "title": "The Restaurant",
+        "quote": "Good food, good friends, and a full beak!",
+        "booking": "Book a Table",
+        "bookingText": "Remember to book your table, especially for Thursday concerts and lunch services!",
+        "email": "Email Reservation",
+        "phone": "Phone Reservation",
+        "phoneNumber": "06 80 75 11 61",
+        "menuTitle": "Our Menu",
+        "lunchFormulas": "Lunch Formulas",
+        "formula1": "Starter + Main or Main + Dessert",
+        "formula2": "Starter + Main + Dessert",
+        "disclaimer": "* All prices include tax. The house doesn't do credit but does very good food!"
+    },
+    "footer": {
+        "rights": "All rights reserved.",
+        "address": "1 place Albert Thomas, 11100 Narbonne, France"
+    }
+}

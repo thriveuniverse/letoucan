@@ -1,36 +1,38 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Le Toucan - Website
 
-## Getting Started
+A modern, welcoming website for Le Toucan bar in Narbonne, France.
 
-First, run the development server:
+## Features
+- **Next.js 15+** with App Router for fast performance.
+- **Tailwind CSS 4** for premium, responsive styling.
+- **Bilingual Support**: Easily switch between French and English.
+- **Dynamic Content**: Managed via JSON files for easy editing.
+- **Premium Design**: Playfair Display headings and Inter body text.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## How to Edit Content
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 1. Editing Text
+All text content is located in the `src/locales/` directory:
+- `en.json`: English text
+- `fr.json`: French text
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+To update the "About" section or "History", simply edit the corresponding text in these files. Use `\n\n` for new paragraphs.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 2. Updating the Menu
+The menu items are defined in `src/app/restaurant/page.tsx` under the `menuSections` constant. You can easily add, remove, or change prices there.
 
-## Learn More
+### 3. Images
+- **Logo**: Replace `public/logo.jpg` with a new file (keep the same name or update the reference in components).
+- **Hero/Gallery Images**: Currently using Unsplash placeholders. Replace the URLs in the page files (`src/app/page.tsx`, etc.) with your own image paths in the `public/` folder.
 
-To learn more about Next.js, take a look at the following resources:
+## Deployment
+This site is optimized for static hosting on **Netlify**.
+1. Connect your GitHub repository to Netlify.
+2. Build command: `npm run build`
+3. Publish directory: `.next` (or let Netlify auto-detect Next.js)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Maintenance
+Since this is a static site with no backend, there are no databases or servers to maintain. It's built to last!
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+Built with ❤️ for Duncan Boyer.

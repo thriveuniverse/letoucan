@@ -1,65 +1,153 @@
-import Image from "next/image";
+'use client';
+
+import Navbar from "@/components/Navbar";
+import Hero from "@/components/Hero";
+import InstagramFeed from "@/components/InstagramFeed";
+import Footer from "@/components/Footer";
+import { useLanguage } from "@/context/LanguageContext";
+import { motion } from "framer-motion";
+import Link from "next/link";
+import { ArrowRight, Utensils, History, Camera, Users } from "lucide-react";
 
 export default function Home() {
+  const { t } = useLanguage();
+
+  const featureCards = [
+    {
+      title: t('home.cards.restaurant.title'),
+      desc: t('home.cards.restaurant.desc'),
+      icon: <Utensils className="text-accent" size={32} />,
+      link: "/restaurant",
+      img: "/food-fish.jpg"
+    },
+    {
+      title: t('home.cards.about.title'),
+      desc: t('home.cards.about.desc'),
+      icon: <Users className="text-accent" size={32} />,
+      link: "/about",
+      img: "/duncan-hero.jpg"
+    },
+    {
+      title: t('home.cards.history.title'),
+      desc: t('home.cards.history.desc'),
+      icon: <History className="text-accent" size={32} />,
+      link: "/history",
+      img: "/4-fontaines-velos.jpeg"
+    }
+  ];
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+    <main className="min-h-screen">
+      <Navbar />
+
+      <Hero
+        title="Le Toucan"
+        subtitle={t('home.subtitle')}
+        ctaText={t('home.cta')}
+        ctaLink="/restaurant"
+        image="https://images.unsplash.com/photo-1541546339599-ecdbf3773bc5?auto=format&fit=crop&q=80"
+        video="/le-toucan.mp4"
+      />
+
+      {/* Welcome Section */}
+      <section className="py-24 bg-white relative overflow-hidden">
+        <div className="container-custom">
+          <div className="max-w-3xl mx-auto text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
             >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+              <h2 className="section-title text-center text-primary mb-8">{t('home.introTitle')}</h2>
+              <p className="text-xl text-gray-700 leading-relaxed mb-12">
+                {t('home.introText')}
+              </p>
+              <div className="w-24 h-1 bg-accent mx-auto"></div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Navigation Cards */}
+      <section className="py-24 bg-[#faf9f6]">
+        <div className="container-custom">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {featureCards.map((card, idx) => (
+              <motion.div
+                key={card.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.1, duration: 0.6 }}
+              >
+                <Link
+                  href={card.link}
+                  className="group block relative bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 h-full border border-gray-100"
+                >
+                  <div className="aspect-[4/3] overflow-hidden">
+                    <img src={card.img} alt={card.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                  </div>
+                  <div className="p-8">
+                    <div className="mb-4 bg-primary/5 w-14 h-14 rounded-2xl flex items-center justify-center">
+                      {card.icon}
+                    </div>
+                    <h3 className="text-2xl font-serif font-bold text-primary mb-3">{card.title}</h3>
+                    <p className="text-gray-600 mb-6 leading-relaxed">
+                      {card.desc}
+                    </p>
+                    <span className="inline-flex items-center gap-2 text-primary font-bold group-hover:gap-4 transition-all uppercase tracking-widest text-sm">
+                      Discover more <ArrowRight size={18} />
+                    </span>
+                  </div>
+                </Link>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Gallery Teaser */}
+      <section className="py-24 bg-primary text-white overflow-hidden">
+        <div className="container-custom">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
             >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+              <h2 className="text-4xl md:text-5xl font-serif font-bold mb-6">{t('home.galleryTeaser.title')}</h2>
+              <p className="text-xl text-gray-300 mb-10 leading-relaxed">
+                {t('home.galleryTeaser.text')}
+              </p>
+              <Link href="/gallery" className="btn-primary inline-flex items-center gap-3 bg-white text-primary hover:bg-white/90">
+                <Camera size={20} /> {t('home.galleryTeaser.cta')}
+              </Link>
+            </motion.div>
+            <div className="grid grid-cols-2 gap-4">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                className="aspect-square rounded-2xl overflow-hidden shadow-2xl mt-12"
+              >
+                <img src="/le-toucan-narbonne (18).png" alt="Gallery" className="w-full h-full object-cover" />
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.1 }}
+                className="aspect-square rounded-2xl overflow-hidden shadow-2xl"
+              >
+                <img src="/le-toucan-narbonne (19).png" alt="Gallery" className="w-full h-full object-cover" />
+              </motion.div>
+            </div>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+      </section>
+
+      <InstagramFeed />
+
+      <Footer />
+    </main>
   );
 }
