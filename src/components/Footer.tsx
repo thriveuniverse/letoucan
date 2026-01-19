@@ -67,18 +67,32 @@ const Footer = () => {
                                 </a>
                             </li>
                             <li>
-                                <a href="mailto:contact@letoucan.fr" className="flex items-center gap-3 text-gray-300 hover:text-white transition-colors">
+                                <a href="mailto:contact@letoucan.netlify.app" className="flex items-center gap-3 text-gray-300 hover:text-white transition-colors">
                                     <Mail size={20} />
-                                    <span>contact@letoucan.fr</span>
+                                    <span>contact@letoucan.netlify.app</span>
                                 </a>
                             </li>
                         </ul>
                     </div>
                 </div>
 
-                <div className="border-t border-white/10 pt-8 text-center text-sm text-gray-400">
-                    <p>© {new Date().getFullYear()} Le Toucan. {t('footer.rights')}</p>
+                <div className="border-t border-white/10 pt-8 text-center text-sm text-gray-400 space-y-2">
+                    <p>
+                        © {new Date().getFullYear()} Le Toucan. {t('footer.rights')}
+                    </p>
+                    <p className="text-xs">
+                        Built by{' '}
+                        <a
+                            href="https://thethriveclan.com/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="hover:text-white transition-colors underline underline-offset-4"
+                        >
+                            The Thrive Clan
+                        </a>
+                    </p>
                 </div>
+
             </div>
         </footer>
     );
