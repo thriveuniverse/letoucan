@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "@/context/LanguageContext";
+import Script from "next/script";
+
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -89,6 +91,20 @@ export default function RootLayout({
   return (
     <html lang="fr" className={`${playfair.variable} ${inter.variable}`}>
       <head>
+         {/* Google Analytics */}
+    <Script
+      src="https://www.googletagmanager.com/gtag/js?id=G-ZK9V3VYVD8"
+      strategy="afterInteractive"
+    />
+    <Script id="google-analytics" strategy="afterInteractive">
+      {`
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-ZK9V3VYVD8');
+      `}
+    </Script>
+
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(restaurantJsonLd) }}
