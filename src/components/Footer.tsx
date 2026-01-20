@@ -67,9 +67,9 @@ const Footer = () => {
                                 </a>
                             </li>
                             <li>
-                                <a href="mailto:contact@letoucan.netlify.app" className="flex items-center gap-3 text-gray-300 hover:text-white transition-colors">
+                                <a href="letoucan11@outlook.fr" className="flex items-center gap-3 text-gray-300 hover:text-white transition-colors">
                                     <Mail size={20} />
-                                    <span>contact@letoucan.netlify.app</span>
+                                    <span>letoucan11@outlook.fr</span>
                                 </a>
                             </li>
                         </ul>
