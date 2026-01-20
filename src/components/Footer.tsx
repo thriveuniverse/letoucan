@@ -67,7 +67,7 @@ const Footer = () => {
                                 </a>
                             </li>
                             <li>
-                                <a href="letoucan11@outlook.fr" className="flex items-center gap-3 text-gray-300 hover:text-white transition-colors">
+                                <a href="mailto:letoucan11@outlook.fr" className="flex items-center gap-3 text-gray-300 hover:text-white transition-colors">
                                     <Mail size={20} />
                                     <span>letoucan11@outlook.fr</span>
                                 </a>

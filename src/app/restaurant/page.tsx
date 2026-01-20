@@ -120,7 +120,7 @@ export default function Restaurant() {
                                 <a href="tel:+33680751161" className="btn-primary flex items-center justify-center gap-2">
                                     <Phone size={18} /> 06 80 75 11 61
                                 </a>
-                                <a href="letoucan11@outlook.fr" className="btn-outline flex items-center justify-center gap-2">
+                                <a href="mailto:letoucan11@outlook.fr" className="btn-outline flex items-center justify-center gap-2">
                                     <Mail size={18} /> {t('restaurant.email')}
                                 </a>
                             </div>

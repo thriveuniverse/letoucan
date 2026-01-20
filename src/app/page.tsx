@@ -97,7 +97,7 @@ export default function Home() {
                       {card.desc}
                     </p>
                     <span className="inline-flex items-center gap-2 text-primary font-bold group-hover:gap-4 transition-all uppercase tracking-widest text-sm">
-                      Discover more <ArrowRight size={18} />
+                      {t('home.discoverMore')} <ArrowRight size={18} />
                     </span>
                   </div>
                 </Link>
