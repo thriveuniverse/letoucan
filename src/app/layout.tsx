@@ -18,13 +18,13 @@ export const metadata: Metadata = {
   description: "Bienvenue au Toucan, brasserie historique et bar vivant au cœur de Narbonne (Place des Quatre Fontaines). Découvrez notre cuisine locale, nos tapas et l'histoire de Duncan Boyer.",
   keywords: ["Le Toucan", "Bar Narbonne", "Restaurant Narbonne", "Quatre Fontaines", "Duncan Boyer", "Tapas Narbonne", "Brasserie Narbonne"],
   robots: {
-    index: false,
-    follow: false,
+    index: true,
+    follow: true,
   },
   openGraph: {
     title: "Le Toucan | Bar & Restaurant à Narbonne",
     description: "Cuisine locale, tapas et convivialité au cœur de Narbonne.",
-    url: "https://letoucan.netlify.app",
+    url: "https://letoucan-narbonne.com",
     siteName: "Le Toucan Narbonne",
     images: [
       {
@@ -47,7 +47,7 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "Restaurant",
     "name": "Le Toucan",
-    "image": "https://letoucan.netlify.app/logo.jpg",
+    "image": "https://letoucan-narbonne.com/logo.jpg",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "1 place Albert Thomas",
@@ -60,7 +60,7 @@ export default function RootLayout({
       "latitude": 43.1833,
       "longitude": 3.0000
     },
-    "url": "https://letoucan.netlify.app",
+    "url": "https://letoucan-narbonne.com",
     "telephone": "+33680751161",
     "servesCuisine": ["French", "Tapas", "Brasserie"],
     "priceRange": "$$",
@@ -78,7 +78,7 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "Le Toucan",
-    "url": "https://letoucan.netlify.app",
+    "url": "https://letoucan-narbonne.com",
     "creator": {
       "@type": "Organization",
       "name": "The Thrive Clan",
