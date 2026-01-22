@@ -7,32 +7,29 @@ import Footer from "@/components/Footer";
 import { useLanguage } from "@/context/LanguageContext";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ArrowRight, Utensils, History, Camera, Users } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export default function Home() {
   const { t } = useLanguage();
 
   const featureCards = [
     {
-      title: t('home.cards.restaurant.title'),
-      desc: t('home.cards.restaurant.desc'),
-      icon: <Utensils className="text-accent" size={32} />,
-      link: "/restaurant",
-      img: "/food-fish.jpg"
-    },
-    {
       title: t('home.cards.about.title'),
       desc: t('home.cards.about.desc'),
-      icon: <Users className="text-accent" size={32} />,
       link: "/about",
-      img: "/duncan-hero.jpg"
+      img: "/artisanal-bieres.png"
     },
     {
-      title: t('home.cards.history.title'),
-      desc: t('home.cards.history.desc'),
-      icon: <History className="text-accent" size={32} />,
+      title: "Lost Tales",
+      desc: "Tales from the Bourg that whisper through Narbonne",
       link: "/history",
-      img: "/4-fontaines-velos.jpeg"
+      img: "/histoire.jpg"
+    },
+    {
+      title: "Discover the Vibe",
+      desc: "See the place and sense the atmosphere",
+      link: "/gallery",
+      img: "/logo.jpg"
     }
   ];
 
@@ -41,16 +38,16 @@ export default function Home() {
       <Navbar />
 
       <Hero
-        title="Le Toucan"
-        subtitle={t('home.subtitle')}
+        title="L'Antre"
         ctaText={t('home.cta')}
-        ctaLink="/restaurant"
+        ctaLink="/about"
+        textColor="text-amber-300"
         image="https://images.unsplash.com/photo-1541546339599-ecdbf3773bc5?auto=format&fit=crop&q=80"
-        video="/le-toucan.mp4"
+        video="/lantre.mp4"
       />
 
       {/* Welcome Section */}
-      <section className="py-24 bg-white relative overflow-hidden">
+      <section className="py-24 relative overflow-hidden" style={{ background: 'var(--surface)' }}>
         <div className="container-custom">
           <div className="max-w-3xl mx-auto text-center">
             <motion.div
@@ -70,7 +67,7 @@ export default function Home() {
       </section>
 
       {/* Navigation Cards */}
-      <section className="py-24 bg-[#faf9f6]">
+      <section className="py-24" style={{ background: 'var(--surface-light)' }}>
         <div className="container-custom">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {featureCards.map((card, idx) => (
@@ -83,15 +80,13 @@ export default function Home() {
               >
                 <Link
                   href={card.link}
-                  className="group block relative bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 h-full border border-gray-100"
+                  className="group block relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 h-full border"
+                  style={{ background: 'var(--surface)', borderColor: 'var(--accent-dark)' }}
                 >
                   <div className="aspect-[4/3] overflow-hidden">
                     <img src={card.img} alt={card.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                   </div>
                   <div className="p-8">
-                    <div className="mb-4 bg-primary/5 w-14 h-14 rounded-2xl flex items-center justify-center">
-                      {card.icon}
-                    </div>
                     <h3 className="text-2xl font-serif font-bold text-primary mb-3">{card.title}</h3>
                     <p className="text-gray-600 mb-6 leading-relaxed">
                       {card.desc}
@@ -120,8 +115,8 @@ export default function Home() {
               <p className="text-xl text-gray-300 mb-10 leading-relaxed">
                 {t('home.galleryTeaser.text')}
               </p>
-              <Link href="/gallery" className="btn-primary inline-flex items-center gap-3 bg-white text-primary hover:bg-white/90">
-                <Camera size={20} /> {t('home.galleryTeaser.cta')}
+              <Link href="/gallery" className="btn-primary inline-flex items-center gap-3" style={{ background: 'var(--surface)', color: 'var(--primary)' }}>
+                {t('home.galleryTeaser.cta')}
               </Link>
             </motion.div>
             <div className="grid grid-cols-2 gap-4">
@@ -130,7 +125,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 className="aspect-square rounded-2xl overflow-hidden shadow-2xl mt-12"
               >
-                <img src="/le-toucan-narbonne (18).png" alt="Gallery" className="w-full h-full object-cover" />
+                <img src="/gallery-Alex1.jpg" alt="Gallery" className="w-full h-full object-cover" />
               </motion.div>
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
@@ -138,7 +133,7 @@ export default function Home() {
                 transition={{ delay: 0.1 }}
                 className="aspect-square rounded-2xl overflow-hidden shadow-2xl"
               >
-                <img src="/le-toucan-narbonne (19).png" alt="Gallery" className="w-full h-full object-cover" />
+                <img src="/gallery-food1.jpg" alt="Gallery" className="w-full h-full object-cover" />
               </motion.div>
             </div>
           </div>

@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Inter } from "next/font/google";
+import { UnifrakturCook, Inter } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "@/context/LanguageContext";
 import Script from "next/script";
 
 
-const playfair = Playfair_Display({
+const unifrakturcook = UnifrakturCook({
   subsets: ["latin"],
-  variable: "--font-playfair",
+  weight: ["700"],
+  variable: "--font-unifrakturcook",
 });
 
 const inter = Inter({
@@ -16,18 +17,18 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Le Toucan | Bar & Restaurant à Narbonne",
-  description: "Bienvenue au Toucan, brasserie historique et bar vivant au cœur de Narbonne (Place des Quatre Fontaines). Découvrez notre cuisine locale, nos tapas et l'histoire de Duncan Boyer.",
-  keywords: ["Le Toucan", "Bar Narbonne", "Restaurant Narbonne", "Quatre Fontaines", "Duncan Boyer", "Tapas Narbonne", "Brasserie Narbonne"],
+  title: "L'Antre | Taverne à Narbonne",
+  description: "Bienvenue à L'Antre, brasserie historique et bar vivant au cœur de Narbonne (Place des Quatre Fontaines). Découvrez notre cuisine locale, nos tapas et l'histoire de Duncan Boyer.",
+  keywords: ["L'Antre", "Bar Narbonne", "Restaurant Narbonne", "Artisanal", "Bieres Narbonne", "taverne Narbonne"],
   robots: {
     index: true,
     follow: true,
   },
   openGraph: {
-    title: "Le Toucan | Bar & Restaurant à Narbonne",
-    description: "Cuisine locale, tapas et convivialité au cœur de Narbonne.",
-    url: "https://letoucan-narbonne.com",
-    siteName: "Le Toucan Narbonne",
+    title: "L'Antre | Taverne à Narbonne",
+    description: "Bieres artisnales et bien plus encore au cœur de Narbonne.",
+    url: "https://lantre.netlify.app",
+    siteName: "L'Antre Narbonne",
     images: [
       {
         url: "/logo.jpg",
@@ -47,12 +48,12 @@ export default function RootLayout({
 }>) {
   const restaurantJsonLd = {
     "@context": "https://schema.org",
-    "@type": "Restaurant",
-    "name": "Le Toucan",
-    "image": "https://letoucan-narbonne.com/logo.jpg",
+    "@type": "Bar",
+    "name": "L'Antre",
+    "image": "https://lantre.netlify.app/logo.jpg",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "1 place Albert Thomas",
+      "streetAddress": "4 rue Benjamin Cremieux",
       "addressLocality": "Narbonne",
       "postalCode": "11100",
       "addressCountry": "FR"
@@ -62,9 +63,9 @@ export default function RootLayout({
       "latitude": 43.1833,
       "longitude": 3.0000
     },
-    "url": "https://letoucan-narbonne.com",
-    "telephone": "+33680751161",
-    "servesCuisine": ["French", "Tapas", "Brasserie"],
+    "url": "https://lantre.netlify.app",
+    "telephone": "+33468916792",
+    "servesCuisine": ["French", "Bieres", "Vin"],
     "priceRange": "$$",
     "openingHoursSpecification": [
       {
@@ -79,8 +80,8 @@ export default function RootLayout({
   const websiteJsonLd = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "Le Toucan",
-    "url": "https://letoucan-narbonne.com",
+    "name": "L'Antre",
+    "url": "https://lantre.netlify.app",
     "creator": {
       "@type": "Organization",
       "name": "The Thrive Clan",
@@ -89,11 +90,14 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="fr" className={`${playfair.variable} ${inter.variable}`}>
+    <html lang="fr" className={`${unifrakturcook.variable} ${inter.variable}`}>
       <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+        <link href="https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap" rel="stylesheet" />
          {/* Google Analytics */}
     <Script
-      src="https://www.googletagmanager.com/gtag/js?id=G-ZK9V3VYVD8"
+      src="https://www.googletagmanager.com/gtag/js?id=G-xxxxxxxxxx"
       strategy="afterInteractive"
     />
     <Script id="google-analytics" strategy="afterInteractive">
@@ -101,7 +105,7 @@ export default function RootLayout({
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', 'G-ZK9V3VYVD8');
+        gtag('config', 'G-xxxxxxxxxxx');
       `}
     </Script>
 

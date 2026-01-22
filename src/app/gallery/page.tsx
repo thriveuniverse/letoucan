@@ -12,30 +12,28 @@ export default function Gallery() {
     const { t } = useLanguage();
     const [selectedImg, setSelectedImg] = useState<string | null>(null);
 
-    // Soft Bento Curated Collection
+    // Placeholder Collection
     const curatedImages = [
-        { url: '/le-toucan-narbonne (18).png', title: 'The Heart of the Bar', span: 'md:col-span-2 md:row-span-2' },
-        { url: '/le-toucan-promo5.jpg', title: 'Tonight at Le Toucan', span: 'md:col-span-1 md:row-span-2' },
-        { url: '/food-fish.jpg', title: 'Fresh Flavors', span: 'md:col-span-1 md:row-span-1' },
-        { url: '/food-drinks.png', title: 'Cheers!', span: 'md:col-span-1 md:row-span-1' },
-        { url: '/le-toucan-narbonne (7).png', title: 'Authentic Vibe', span: 'md:col-span-2 md:row-span-1' },
-        { url: '/le-toucan-narbonne (1).png', title: 'Local Life', span: 'md:col-span-1 md:row-span-1' },
-        { url: '/le-toucan-promo (1).png', title: 'Special Events', span: 'md:col-span-1 md:row-span-1' },
-        { url: '/le-toucan-narbonne (17).png', title: 'Evening Glow', span: 'md:col-span-1 md:row-span-1' },
-        { url: '/le-toucan-narbonne (10).png', title: 'Community Spirit', span: 'md:col-span-1 md:row-span-1' },
+        { url: 'placeholder', title: 'Atmospheric Shots', span: 'md:col-span-2 md:row-span-2' },
+        { url: 'placeholder', title: 'Event Photography', span: 'md:col-span-1 md:row-span-2' },
+        { url: 'placeholder', title: 'Food & Drink', span: 'md:col-span-1 md:row-span-1' },
+        { url: 'placeholder', title: 'Portrait Series', span: 'md:col-span-1 md:row-span-1' },
+        { url: 'placeholder', title: 'Architecture', span: 'md:col-span-2 md:row-span-1' },
+        { url: 'placeholder', title: 'Street Scenes', span: 'md:col-span-1 md:row-span-1' },
+        { url: 'placeholder', title: 'Night Photography', span: 'md:col-span-1 md:row-span-1' },
+        { url: 'placeholder', title: 'Details & Textures', span: 'md:col-span-1 md:row-span-1' },
+        { url: 'placeholder', title: 'Community Moments', span: 'md:col-span-1 md:row-span-1' },
     ];
 
     return (
-        <main className="min-h-screen bg-[#faf9f6]">
+        <main className="min-h-screen" style={{ background: 'var(--surface-light)' }}>
             <Navbar />
 
             <Hero
-                title={t('nav.gallery')}
-                subtitle={t('gallery.subtitle')}
-                video="/le-toucan-animated.mp4"
+                title=""
+                video="/lantre-swords.mp4"
                 videoFit="contain"
-                bgColor="#ffffff"
-                textColor="text-primary"
+                bgColor="#260602"
                 showGradient={false}
                 image="/le-toucan-narbonne (18).png"
             />
@@ -62,21 +60,34 @@ export default function Gallery() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: idx * 0.05 }}
-                                onClick={() => setSelectedImg(img.url)}
-                                className={`group relative rounded-[2.5rem] overflow-hidden cursor-pointer bg-white shadow-soft transition-all duration-700 hover:shadow-2xl ${img.span}`}
+                                onClick={() => img.url !== 'placeholder' && setSelectedImg(img.url)}
+                                className={`group relative rounded-[2.5rem] overflow-hidden ${img.url !== 'placeholder' ? 'cursor-pointer' : ''} shadow-soft transition-all duration-700 hover:shadow-2xl ${img.span}`}
+                                style={{ background: 'var(--surface)' }}
                             >
-                                <img
-                                    src={img.url}
-                                    alt={img.title}
-                                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
-                                />
-                                {/* Soft Overlay */}
-                                <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center backdrop-blur-[2px]">
-                                    <div className="text-white text-center p-6 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                                        <Maximize2 size={32} className="mx-auto mb-4 opacity-80" />
-                                        <p className="font-serif text-xl italic">{img.title}</p>
+                                {img.url === 'placeholder' ? (
+                                    <div className="w-full h-full bg-gradient-to-br from-accent/10 to-primary/10 flex flex-col items-center justify-center text-center p-6 transition-transform duration-1000 group-hover:scale-105">
+                                        <div className="w-16 h-16 rounded-full bg-accent/20 flex items-center justify-center mb-4">
+                                            <span className="text-2xl text-accent/60">📷</span>
+                                        </div>
+                                        <p className="text-accent/70 font-serif text-sm italic">{img.title}</p>
+                                        <p className="text-accent/50 text-xs mt-2 uppercase tracking-wider">Coming Soon</p>
                                     </div>
-                                </div>
+                                ) : (
+                                    <img
+                                        src={img.url}
+                                        alt={img.title}
+                                        className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                                    />
+                                )}
+                                {/* Soft Overlay */}
+                                {img.url !== 'placeholder' && (
+                                    <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center backdrop-blur-[2px]">
+                                        <div className="text-white text-center p-6 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                                            <Maximize2 size={32} className="mx-auto mb-4 opacity-80" />
+                                            <p className="font-serif text-xl italic">{img.title}</p>
+                                        </div>
+                                    </div>
+                                )}
                             </motion.div>
                         ))}
                     </div>

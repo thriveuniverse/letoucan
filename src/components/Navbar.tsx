@@ -13,18 +13,17 @@ const Navbar = () => {
     const navLinks = [
         { name: t('nav.about'), href: '/about' },
         { name: t('nav.history'), href: '/history' },
-        { name: t('nav.restaurant'), href: '/restaurant' },
         { name: t('nav.gallery'), href: '/gallery' },
     ];
 
     return (
-        <nav className="sticky top-0 w-full z-50 bg-primary shadow-md py-3">
+        <nav className="sticky top-0 w-full z-50 shadow-md py-3" style={{ background: 'var(--background)' }}>
             <div className="container-custom flex justify-between items-center">
                 <Link href="/" className="flex items-center gap-3 group">
                     <div className="w-10 h-10 rounded-full flex items-center justify-center overflow-hidden transition-transform group-hover:scale-110 bg-white border border-white/20">
-                        <img src="/logo.jpg" alt="Le Toucan Logo" className="w-full h-full object-cover" />
+                        <img src="/logo.jpg" alt="L'Antre Logo" className="w-full h-full object-cover" />
                     </div>
-                    <span className="font-serif text-2xl font-bold text-white">Le Toucan</span>
+                    <span className="font-serif text-2xl font-bold" style={{ color: 'var(--accent)' }}>L'Antre</span>
                 </Link>
 
                 {/* Desktop Nav */}
@@ -33,7 +32,10 @@ const Navbar = () => {
                         <Link
                             key={link.href}
                             href={link.href}
-                            className="font-medium text-white/90 hover:text-accent transition-colors"
+                            className="font-medium transition-colors"
+                            style={{ color: 'var(--accent-bright)' }}
+                            onMouseEnter={(e) => e.currentTarget.style.color = 'var(--accent)'}
+                            onMouseLeave={(e) => e.currentTarget.style.color = 'var(--accent-bright)'}
                         >
                             {link.name}
                         </Link>
@@ -42,16 +44,19 @@ const Navbar = () => {
                     <div className="flex items-center gap-4 ml-4">
                         <button
                             onClick={() => setLanguage(language === 'en' ? 'fr' : 'en')}
-                            className="flex items-center gap-1 text-sm font-bold text-white hover:text-accent transition-colors"
+                            className="flex items-center gap-1 text-sm font-bold transition-colors"
+                            style={{ color: 'var(--accent-bright)' }}
+                            onMouseEnter={(e) => e.currentTarget.style.color = 'var(--accent)'}
+                            onMouseLeave={(e) => e.currentTarget.style.color = 'var(--accent-bright)'}
                         >
                             <Languages size={18} />
                             {language.toUpperCase()}
                         </button>
-                        <div className="flex items-center gap-3 border-l border-white/20 pl-4">
-                            <a href="https://www.instagram.com/letoucannarbonne/" target="_blank" rel="noopener noreferrer" className="text-white/90 hover:text-white transition-colors">
+                        <div className="flex items-center gap-3 border-l pl-4" style={{ borderColor: 'var(--accent-dark)' }}>
+                            <a href="https://www.instagram.com/lantre.narbonne/" target="_blank" rel="noopener noreferrer" className="transition-colors" style={{ color: 'var(--accent-bright)' }} onMouseEnter={(e) => e.currentTarget.style.color = 'var(--accent)'} onMouseLeave={(e) => e.currentTarget.style.color = 'var(--accent-bright)'}>
                                 <Instagram size={20} />
                             </a>
-                            <a href="https://www.facebook.com/profile.php?id=61578060914589" target="_blank" rel="noopener noreferrer" className="text-white/90 hover:text-white transition-colors">
+                            <a href="https://www.facebook.com/antredenarbonne" target="_blank" rel="noopener noreferrer" className="transition-colors" style={{ color: 'var(--accent-bright)' }} onMouseEnter={(e) => e.currentTarget.style.color = 'var(--accent)'} onMouseLeave={(e) => e.currentTarget.style.color = 'var(--accent-bright)'}>
                                 <Facebook size={20} />
                             </a>
                         </div>
@@ -62,11 +67,12 @@ const Navbar = () => {
                 <div className="md:hidden flex items-center gap-4">
                     <button
                         onClick={() => setLanguage(language === 'en' ? 'fr' : 'en')}
-                        className="text-white font-bold"
+                        className="font-bold"
+                        style={{ color: 'var(--accent-bright)' }}
                     >
                         {language.toUpperCase()}
                     </button>
-                    <button onClick={() => setIsOpen(!isOpen)} className="text-white">
+                    <button onClick={() => setIsOpen(!isOpen)} style={{ color: 'var(--accent-bright)' }}>
                         {isOpen ? <X size={28} /> : <Menu size={28} />}
                     </button>
                 </div>
@@ -79,7 +85,8 @@ const Navbar = () => {
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: 'auto' }}
                         exit={{ opacity: 0, height: 0 }}
-                        className="md:hidden bg-primary border-t border-white/10 overflow-hidden"
+                        className="md:hidden border-t overflow-hidden"
+                        style={{ background: 'var(--background-alt)', borderColor: 'var(--accent-dark)' }}
                     >
                         <div className="container-custom py-4 flex flex-col gap-4">
                             {navLinks.map((link) => (
@@ -87,16 +94,19 @@ const Navbar = () => {
                                     key={link.href}
                                     href={link.href}
                                     onClick={() => setIsOpen(false)}
-                                    className="text-lg font-medium text-white/90 p-2 hover:text-white"
+                                    className="text-lg font-medium p-2 transition-colors"
+                                    style={{ color: 'var(--accent-bright)' }}
+                                    onMouseEnter={(e) => e.currentTarget.style.color = 'var(--accent)'}
+                                    onMouseLeave={(e) => e.currentTarget.style.color = 'var(--accent-bright)'}
                                 >
                                     {link.name}
                                 </Link>
                             ))}
-                            <div className="flex gap-6 p-2 pt-4 border-t border-white/10">
-                                <a href="https://www.instagram.com/letoucannarbonne/" target="_blank" rel="noopener noreferrer" className="text-white/90">
+                            <div className="flex gap-6 p-2 pt-4 border-t" style={{ borderColor: 'var(--accent-dark)' }}>
+                                <a href="https://www.instagram.com/lantre.narbonne/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-bright)' }}>
                                     <Instagram size={24} />
                                 </a>
-                                <a href="https://www.facebook.com/profile.php?id=61578060914589" target="_blank" rel="noopener noreferrer" className="text-white/90">
+                                <a href="https://www.facebook.com/antredenarbonne" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-bright)' }}>
                                     <Facebook size={24} />
                                 </a>
                             </div>

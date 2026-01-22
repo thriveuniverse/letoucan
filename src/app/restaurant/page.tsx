@@ -105,11 +105,11 @@ export default function Restaurant() {
             </section>
 
             {/* Booking & Formulas */}
-            <section className="py-16 bg-[#faf9f6]">
+            <section className="py-16" style={{ background: 'var(--surface-light)' }}>
                 <div className="container-custom">
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                         {/* Booking Info */}
-                        <div className="lg:col-span-2 bg-white p-8 rounded-3xl shadow-xl border border-gray-100 flex flex-col justify-between">
+                        <div className="lg:col-span-2 p-8 rounded-3xl shadow-xl border" style={{ background: 'var(--surface)', borderColor: 'var(--accent-dark)' }}>
                             <div>
                                 <h2 className="text-3xl font-serif font-bold text-primary mb-4">{t('restaurant.booking')}</h2>
                                 <p className="text-gray-600 mb-8 leading-relaxed">
@@ -120,7 +120,7 @@ export default function Restaurant() {
                                 <a href="tel:+33680751161" className="btn-primary flex items-center justify-center gap-2">
                                     <Phone size={18} /> 06 80 75 11 61
                                 </a>
-                                <a href="mailto:letoucan11@outlook.fr" className="btn-outline flex items-center justify-center gap-2">
+                                <a href="mailto:contact@sitename.com" className="btn-outline flex items-center justify-center gap-2">
                                     <Mail size={18} /> {t('restaurant.email')}
                                 </a>
                             </div>
@@ -147,7 +147,7 @@ export default function Restaurant() {
             </section>
 
             {/* Menu Sections Grid */}
-            <section className="py-16 bg-white">
+            <section className="py-16" style={{ background: 'var(--surface)' }}>
                 <div className="container-custom">
                     <div className="columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8">
                         {menuSections.map((section, idx) => (
@@ -157,7 +157,8 @@ export default function Restaurant() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: idx * 0.1 }}
-                                className="break-inside-avoid bg-[#faf9f6] p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow"
+                                className="break-inside-avoid p-8 rounded-3xl border shadow-sm hover:shadow-md transition-shadow"
+                                style={{ background: 'var(--surface-light)', borderColor: 'var(--accent-dark)' }}
                             >
                                 <h3 className="text-2xl font-serif text-primary mb-6 border-b-2 border-primary/10 pb-2">
                                     {section.title}

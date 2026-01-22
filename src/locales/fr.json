@@ -1,7 +1,7 @@
 {
     "nav": {
         "home": "Accueil",
-        "about": "À propos de Duncan",
+        "about": "Pourquoi l'Artisanal ?",
         "history": "L'Histoire",
         "restaurant": "Le Restaurant",
         "gallery": "Galerie"
@@ -10,14 +10,14 @@
         "welcome": "Bienvenue au Toucan",
         "subtitle": "Un bar de quartier animé au cœur de Narbonne",
         "instaTitle": "Dernières nouvelles sur Instagram",
-        "cta": "Voir notre carte",
+        "cta": "Découvrir plus",
         "discoverMore": "Découvrir plus",
-        "introTitle": "Un Siècle d'Hospitalité",
-        "introText": "Situé au cœur historique de Narbonne, Le Toucan est plus qu'un simple bar : c'est un lieu de rencontre où les histoires se racontent et les souvenirs se créent. Que vous soyez ici pour un café matinal, un déjeuner traditionnel ou des tapas le soir, nos portes vous sont toujours ouvertes.",
+        "introTitle": "Descends dans L'Antre",
+        "introText": "Bières artisanales sans compromis, voûtes chargées de secrets, et l'esprit d'une tribu prête à tout. Narbonne n'a jamais été aussi vivant... en sous-sol.",
         "cards": {
             "about": {
-                "title": "Rencontrez l'Équipe",
-                "desc": "La passion et l'héritage derrière le comptoir."
+                "title": "Bières Artisanales",
+                "desc": "Découvrez pourquoi l'artisanal fait toute la différence."
             },
             "restaurant": {
                 "title": "La Cuisine",
@@ -29,8 +29,8 @@
             }
         },
         "galleryTeaser": {
-            "title": "Capturez l'Instant",
-            "text": "Des concerts animés du jeudi aux cafés tranquilles de l'après-midi, chaque moment au Toucan est un morceau d'histoire.",
+            "title": "capture the vibe",
+            "text": "Games, biere and conversation - discover l'Antre.",
             "cta": "Voir la Galerie"
         },
         "instaText": "Restez connectés avec la vie au bar. Suivez nos aventures quotidiennes, nos événements spéciaux et les dernières nouveautés de la cuisine.",
@@ -44,9 +44,27 @@
         "quote": "Une image est une histoire capturée pour toujours."
     },
     "about": {
-        "title": "À propos de Duncan Boyer",
-        "content": "Duncan Boyer est le propriétaire passionné et la force motrice derrière Le Toucan, un bar de quartier animé au cœur de la Place des Quatre Fontaines à Narbonne. À 31 ans, cet ancien rugbyman et entraîneur apporte une énergie fraîche et optimiste à cet endroit, inspirée de ses racines tahitiennes et de ses liens profonds avec la communauté locale où il a grandi.\n\nAvec une expérience dans la vente de bières et l'hospitalité, Duncan a repris cette brasserie bien-aimée – la rebaptisant Le Toucan en hommage émouvant aux surnoms familiaux et à la mémoire de son père défunt, avec qui il rêvait de créer un espace accueillant pour tous. Son attitude décontractée et amicale transparaît dans chaque detail, faisant de Le Toucan un lieu incontournable pour tisser de vrais liens autour de bons verres et de plaisirs simples.\n\nDuncan adore célébrer les petits moments de la vie, qu'il s'agisse d'une fête, d'un événement local ou simplement d'un après-midi ensoleillé – n'importe quelle excuse pour rassembler amis, familles et voisins. Des repas traditionnels du midi aux tapas du soir et aux concerts animés tous les jeudis, il s'engage à construire une atmosphère inclusive où chacun se sent chez soi. Passez nous voir et découvrez cette chaleur par vous-même.",
-        "quote": "Je rêvais de créer un espace accueillant pour tous, en mémoire de mon père."
+        "heroSubtitle": "Le plan de survie apocalyptique qui a bon goût",
+        "mainTitle": "Bières Artisanales : Le Plan de Survie Apocalyptique (Qui a Vraiment Bon Goût)",
+        "mainQuote": "Quand l'apocalypse arrivera, on pourra en débattre autour d'un verre de bière. Oublier nos problèmes un instant. Planifier le nouveau monde. Ou simplement rire de l'absurdité de tout ça. Dans tous les cas, on aura quelque chose qui vaut la peine de trinquer.",
+        "intro": "Parce que voilà la chose : les bières artisanales sont faites pour prospérer, pas juste pour survivre.",
+        "section1": {
+            "title": "Pas de Produits Chimiques Indésirables – Juste de la Pure Bonté Terrestre",
+            "content": "Les bières de masse sont souvent chargées de stabilisateurs, conservateurs et additifs mystérieux pour survivre à des expéditions et durées de conservation interminables. Les bières artisanales ? Principalement de l'eau, du malt, du houblon, de la levure (et peut-être quelques touches locales amusantes). Ce que vous obtenez, c'est une saveur honnête d'ingrédients réels—aucun déchet que vous ne voudriez pas dans votre corps quand le monde part de travers (ou même un mardi normal). Vivre sainement dans une pinte."
+        },
+        "section2": {
+            "title": "Les Fruits de la Terre, Façonnés par de Vraies Personnes",
+            "content": "Le brassage artisanal célèbre ce que la terre et l'ingéniosité humaine peuvent faire ensemble. Houblons audacieux, malts riches, expériences saisonnières—que ce soit des microbrasseries de l'Aude ou d'artisans belges ou internationaux magistraux. C'est un rappel que la qualité n'a pas besoin d'une usine mondiale ; elle prospère en petits lots, entre mains expertes et avec imagination. Post-crise ou pré-, c'est la vie qu'on veut : savoureuse, naturelle et pleine de caractère."
+        },
+        "section3": {
+            "title": "Saucisson, Pain et Bonne Compagnie – Le Vrai Kit de Survie",
+            "content": "Associez cette bière à un plateau de saucisson, du pain frais, peut-être quelques fromages ou charcuteries locales. Simple, copieux, intemporel. Dans nos caves voûtées, vous ne faites pas que boire—vous vous rassemblez avec une tribu décontractée de gens qui comprennent : bonne bière, bonne bouffe, bonnes histoires. Peu importe ce que le monde extérieur nous lance, on s'adapte, on profite, et on garde le feu (ou le robinet) allumé."
+        },
+        "ctaTitle": "Rejoignez la Tribu de la Voûte : Survivre, Prospérer et Profiter du Voyage",
+        "ctaText": "On n'est pas des survivalistes apocalyptiques. On est juste des gens qui préfèrent le vrai au transformé, la saveur au remplissage, et la communauté à la commodité. Quand les choses deviennent difficiles (ou restent merveilleusement normales), vous nous trouverez ici—versant des bières honnêtes dans de la pierre du 13ème siècle, partageant des plateaux, échangeant des histoires, et trinquant à tout ce qui vient ensuite.",
+        "ctaSubtext": "Venez pour la bière qui pourrait survivre à l'apocalypse. Restez pour l'ambiance qui fait de chaque jour une victoire.",
+        "ctaButton1": "Prêt à Nous Rejoindre ?",
+        "ctaButton2": "Suivez-nous sur Instagram"
     },
     "history": {
         "title": "L'Histoire du Toucan",
@@ -74,6 +92,6 @@
     },
     "footer": {
         "rights": "Tous droits réservés.",
-        "address": "1 place Albert Thomas, 11100 Narbonne, France"
+        "address": "4 rue Benjamin Cremieux, 11100 Narbonne, France"
     }
 }

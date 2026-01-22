@@ -1,22 +1,79 @@
 @import "tailwindcss";
 
+/* ================================
+   Medieval Color System
+   ================================ */
+
 :root {
-  --background: #faf9f6;
-  --foreground: #1a1a1a;
-  --primary: #204a3c;
-  --primary-light: #2d6653;
-  --accent: #d4af37;
+  /* Primary Backgrounds - Dark Chestnut & Parchment */
+  --background: #2B1810;
+  /* Dark chestnut - main dark background */
+  --background-alt: #3D2418;
+  /* Lighter chestnut variant */
+  --background-deep: #1A0F0A;
+  /* Deepest chestnut for footer/nav */
+
+  /* Content surfaces (parchment) */
+  --surface: #F5E6D3;
+  /* Aged parchment - main light background */
+  --surface-muted: #E8D9C0;
+  /* Darker parchment */
+  --surface-light: #FFF8E7;
+  /* Lighter parchment */
+
+  /* Text colors */
+  --foreground: #F0E2B6;
+  /* Gold-on-dark */
+  --text-dark: #2B1E14;
+  /* Ink-on-parchment */
+  --text-muted: #6B5A3A;
+  /* Muted brown */
+  --text-light: #D4C4A8;
+  /* Light text on dark */
+
+  /* Brand & accents - Medieval palette */
+  --primary: #8B2E2E;
+  /* Deep burgundy/wine */
+  --primary-light: #A63939;
+  /* Lighter burgundy */
+  --primary-dark: #6B1F1F;
+  /* Darker burgundy */
+  --accent: #D4A574;
+  /* Antique gold */
+  --accent-bright: #E6C896;
+  /* Brighter gold */
+  --accent-dark: #B8915E;
+  /* Darker gold */
+
+  /* Medieval decorative colors */
+  --medieval-green: #3A5F3A;
+  /* Forest green */
+  --medieval-blue: #2C4A6B;
+  /* Deep blue */
+  --medieval-red: #8B2E2E;
+  /* Same as primary */
+
 }
+
+/* ================================
+   Tailwind Theme Mapping
+   ================================ */
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+
   --color-primary: var(--primary);
   --color-primary-light: var(--primary-light);
   --color-accent: var(--accent);
+
   --font-sans: var(--font-inter), ui-sans-serif, system-ui;
-  --font-serif: var(--font-playfair), ui-serif, Georgia;
+  --font-serif: 'UnifrakturCook', ui-serif, Georgia;
 }
+
+/* ================================
+   Base Styles
+   ================================ */
 
 body {
   background: var(--background);
@@ -24,38 +81,144 @@ body {
   font-family: var(--font-sans);
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-serif);
+/* Force UnifrakturCook font on serif elements */
+.font-serif {
+  font-family: 'UnifrakturCook', ui-serif, Georgia !important;
 }
 
-.glass {
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+/* Headings feel carved / illuminated */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-serif);
+  color: var(--accent);
+  letter-spacing: 0.03em;
 }
+
+/* Paragraphs on parchment */
+p {
+  color: var(--text-dark);
+}
+
+/* ================================
+   Navigation & Footer
+   ================================ */
+
+.nav,
+footer {
+  background: var(--background-deep);
+  color: var(--foreground);
+  border-bottom: 1px solid rgba(212, 165, 116, 0.25);
+}
+
+/* ================================
+   Cards / Content Blocks (Parchment)
+   ================================ */
+
+.card,
+.glass {
+  background: var(--surface);
+  color: var(--text-dark);
+  border: 1px solid rgba(43, 30, 20, 0.15);
+  border-radius: 1.25rem;
+  box-shadow:
+    0 6px 20px rgba(0, 0, 0, 0.35);
+}
+
+/* Muted parchment variant */
+.card-muted {
+  background: var(--surface-muted);
+}
+
+/* ================================
+   Buttons
+   ================================ */
 
 .btn-primary {
-  @apply px-6 py-3 bg-primary text-white rounded-full font-medium transition-all hover:bg-primary-light hover:shadow-lg active:scale-95;
+  @apply px-6 py-3 rounded-full font-medium transition-all;
+  background: var(--primary);
+  color: var(--foreground);
+}
+
+.btn-primary:hover {
+  background: var(--primary-light);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.btn-primary:active {
+  transform: scale(0.96);
 }
 
 .btn-outline {
-  @apply px-6 py-3 border-2 border-primary text-primary rounded-full font-medium transition-all hover:bg-primary hover:text-white hover:shadow-lg active:scale-95;
+  @apply px-6 py-3 rounded-full font-medium transition-all;
+  border: 2px solid var(--accent);
+  color: var(--accent);
+  background: transparent;
 }
 
-.section-title {
-  @apply text-4xl md:text-5xl font-serif text-primary mb-6;
+.btn-outline:hover {
+  background: var(--accent);
+  color: var(--background);
 }
+
+/* ================================
+   Links
+   ================================ */
+
+a {
+  color: var(--accent);
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--primary-light);
+}
+
+/* ================================
+   Section Titles
+   ================================ */
+
+.section-title {
+  @apply text-4xl md:text-5xl font-serif mb-6;
+  color: var(--accent);
+}
+
+/* ================================
+   Layout Helpers
+   ================================ */
 
 .container-custom {
   @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
 }
 
-/* Custom transitions */
+/* ================================
+   Full-width Dark Sections
+   ================================ */
+
+.section-dark {
+  background: var(--background-alt);
+  color: var(--foreground);
+}
+
+/* ================================
+   Animations
+   ================================ */
+
 .fade-in {
   animation: fadeIn 0.8s ease-out forwards;
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

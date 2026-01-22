@@ -28,7 +28,7 @@ const InstagramFeed = () => {
 
                     <div className="flex flex-col sm:flex-row gap-4">
                         <a
-                            href="https://www.instagram.com/letoucannarbonne/"
+                            href="https://www.instagram.com/lantre.narbonne/"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="btn-primary inline-flex items-center gap-2"
@@ -37,7 +37,7 @@ const InstagramFeed = () => {
                             {t('home.instaFollow')}
                         </a>
                         <a
-                            href="https://www.facebook.com/profile.php?id=61578060914589"
+                            href="https://www.facebook.com/antredenarbonne"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="btn-outline inline-flex items-center gap-2"
